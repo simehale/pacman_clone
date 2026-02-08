@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,6 +12,7 @@
         <p class="player__heading"></p>
         <p class="player__score"></p>
       </div>
+      <!-- need javascript that tells the engine to increase 2% max speed after every level up to level 49-->
       <div class="container">
         <p class="high-score__heading"></p>
         <p class="high-score__quantity"></p>
@@ -19,6 +20,22 @@
     </header>
     <main>
       <section class="maze"></section>
+      <section class="leader-board">
+        <h2 class=""></h2>
+        <ol class="high-scores">
+          <template id="score-template">
+            <li class="score-ranks">
+              <label class="score-label" for="">
+                <input class="rank" id="" start="1" />
+                <span class="name"></span>
+                <span class="score"></span>
+              </label>
+            </li>
+          </template>
+        </ol>
+        <!-- the score board should stop generating scores to the DOM after the 10th score -->
+      </section>
+      <script src="./levels/index.js" type="level"></script>
     </main>
     <footer class="footer"></footer>
   </body>
