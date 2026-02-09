@@ -10,11 +10,11 @@
     <header class="header">
       <div class="container">
         <p class="player__heading"></p>
-        <p class="player__score"></p>
+        <p class="player__score">000000</p>
       </div>
       <!-- need javascript that tells the engine to increase 2% max speed after every level up to level 49-->
       <div class="container">
-        <p class="high-score__heading"></p>
+        <p class="high-score__heading">High Score</p>
         <p class="high-score__quantity"></p>
       </div>
     </header>
@@ -37,6 +37,10 @@
       </section>
       <script src="./levels/index.js" type="level"></script>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <!-- requires javascript to load changes when certain event listeners are triggered(pacman death, pacman touches item) -->
+      <div class="lives"></div>
+      <div class="items"></div>
+    </footer>
   </body>
 </html>
