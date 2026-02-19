@@ -1,1 +1,47 @@
 /* Grid dimensions should be 6x6 px for each cell*/
+.level {
+  width: 1920px;
+  height: 1080px;
+  background-color: black;
+  display: flex;
+}
+
+.level__content {
+  display: block;
+  width: 224px;
+  height: 288px;
+  justify-content: center;
+  font-family: "Joystix Monospace", Courier, monospace;
+  color: white;
+}
+
+.header {
+  width: 100%;
+  height: 10px;
+  font-family: "Joystix Monospace", Courier, monospace;
+  font-size: 24px;
+}
+
+.heading {
+  font-family: "Joystix Monospace", Courier, monospace;
+}
+
+.pacman {
+  visibility: hidden;
+}
+
+.ghost {
+  visibility: hidden;
+}
+
+.special-items {
+  visibility: hidden;
+}
+
+.pacman-lives {
+  visibility: hidden;
+}
+
+.collected-items {
+  visibility: hidden;
+}

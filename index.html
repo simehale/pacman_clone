@@ -4,188 +4,204 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pacman</title>
-    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="stylesheet" href="./levels/index.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <p class="player__heading">P1</p>
-        <p class="player__score">000000</p>
-      </div>
-      <!-- need javascript that tells the engine to increase 2% max speed after every level up to level 49-->
-      <div class="container">
-        <p class="high-score__heading">High Score</p>
-        <p class="high-score__quantity"></p>
-      </div>
-    </header>
-    <main>
-      <section class="maze">
-        <div class="maze__container">
-          <!-- we can link the maze layout png to the background image in the css -->
-          <div class="grid">
-            <div class="pacman">
-              <img class="pacman__mouth_opened" src="" alt="pacman-frame-1" />
-              <img class="pacman__mouth_agaped" src="" alt="pacman-frame-2" />
-              <img class="pacman__mouth_closed" src="" alt="pacman-frame-3" />
-            </div>
-            <div class="ghost">
-              <div class="ghost__blinky">
-                <div class="ghost__blinky_moves-up">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__blinky_moves-right">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__blinky_moves-down">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__blinky_moves-left">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-              </div>
-              <div class="ghost__pinky">
-                <div class="ghost__pinky_moves-up">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__pinky_moves-right">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__pinky_moves-down">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__pinky_moves-left">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-              </div>
-              <div class="ghost__inky">
-                <div class="ghost__inky_moves-up">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__inky_moves-right">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__inky_moves-down">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__inky_moves-left">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-              </div>
-              <div class="ghost__clyde">
-                <div class="ghost__clyde_moves-up">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__clyde_moves-right">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__clyde_moves-down">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-                <div class="ghost__clyde_moves-left">
-                  <img src="" alt="ghost-frame-1" />
-                  <img src="" alt="ghost-frame-2" />
-                </div>
-              </div>
-            </div>
-            <div class="pellet">
-              <div class="pellet__small"></div>
-              <div class="pellet__big"></div>
-            </div>
-            <div class="special-items">
-              <img src="" alt="snake" />
-              <img src="" alt="fig" />
-              <img src="" alt="lamb" />
-              <img src="" alt="pyramid" />
-              <img src="" alt="gem-stone" />
-              <img src="" alt="golden-calf" />
-              <img src="" alt="stone-tablets" />
-              <img src="" alt="crown" />
-            </div>
-            <!-- elements that will be generated inside this grid include, 
-              A wall
-              A small pellet
-              A big pellet
-              Pac-Man
-              Ghosts
-              Special items
-              Empty space 
-            -->
+    <div class="level">
+      <div class="level__content">
+        <header class="header">
+          <div class="player-score">
+            <p class="heading">P1</p>
+            <p class="score" id="player-score">00</p>
           </div>
-        </div>
-      </section>
-      <section class="leader-board">
-        <h2>High Scores</h2>
-        <ol class="high-scores">
-          <template id="score-template">
-            <li class="score-ranks">
-              <label class="score-label" for="">
-                <input class="rank" id="" start="1" />
-                <span class="name"></span>
-                <span class="score"></span>
-              </label>
-            </li>
-          </template>
-        </ol>
-        <!-- the score board should stop generating scores to the DOM after the 10th score is generated-->
-        <!-- additional scores are then appendend in proper order depending on where their high score lies -->
-      </section>
-      <script src="./levels/index.js" type="level"></script>
-    </main>
-    <footer class="footer">
-      <!-- requires javascript to load changes when certain event listeners are triggered(pacman death, pacman eats item) -->
-      <div class="container">
-        <ul class="pacman-lives">
-          <!-- prepend -->
-          <li class="1-life">
-            <img src="" alt="pacman-icon" />
-          </li>
-        </ul>
+          <!-- need javascript that tells the engine to increase 2% max speed after every level up to level 49-->
+          <div class="high-score">
+            <p class="heading">High Score</p>
+            <p class="score" id="high-score">00</p>
+          </div>
+        </header>
+        <main>
+          <section class="maze">
+            <div class="maze__container">
+              <!-- we can link the maze layout png to the background image in the css -->
+              <div class="grid">
+                <div class="pacman">
+                  <img
+                    class="pacman__mouth_opened"
+                    src=""
+                    alt="pacman-frame-1"
+                  />
+                  <img
+                    class="pacman__mouth_agaped"
+                    src=""
+                    alt="pacman-frame-2"
+                  />
+                  <img
+                    class="pacman__mouth_closed"
+                    src=""
+                    alt="pacman-frame-3"
+                  />
+                </div>
+                <div class="ghost">
+                  <div class="ghost__blinky">
+                    <div class="ghost__blinky_moves-up">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__blinky_moves-right">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__blinky_moves-down">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__blinky_moves-left">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                  </div>
+                  <div class="ghost__pinky">
+                    <div class="ghost__pinky_moves-up">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__pinky_moves-right">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__pinky_moves-down">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__pinky_moves-left">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                  </div>
+                  <div class="ghost__inky">
+                    <div class="ghost__inky_moves-up">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__inky_moves-right">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__inky_moves-down">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__inky_moves-left">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                  </div>
+                  <div class="ghost__clyde">
+                    <div class="ghost__clyde_moves-up">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__clyde_moves-right">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__clyde_moves-down">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                    <div class="ghost__clyde_moves-left">
+                      <img src="" alt="ghost-frame-1" />
+                      <img src="" alt="ghost-frame-2" />
+                    </div>
+                  </div>
+                </div>
+                <div class="pellet">
+                  <div class="pellet__small"></div>
+                  <div class="pellet__big"></div>
+                </div>
+                <div class="special-items">
+                  <img src="" alt="snake" />
+                  <img src="" alt="fig" />
+                  <img src="" alt="lamb" />
+                  <img src="" alt="pyramid" />
+                  <img src="" alt="gem-stone" />
+                  <img src="" alt="golden-calf" />
+                  <img src="" alt="stone-tablets" />
+                  <img src="" alt="crown" />
+                </div>
+                <!-- elements that will be generated inside this grid include, 
+                  A wall
+                  A small pellet
+                  A big pellet
+                  Pac-Man
+                  Ghosts
+                  Special items
+                  Empty space 
+                -->
+              </div>
+            </div>
+          </section>
+          <section class="leader-board">
+            <h2>High Scores</h2>
+            <ol class="high-scores">
+              <template id="score-template">
+                <li class="score-ranks">
+                  <label class="score-label" for="">
+                    <input class="rank" id="" start="1" />
+                    <span class="name"></span>
+                    <span class="score"></span>
+                  </label>
+                </li>
+              </template>
+            </ol>
+            <!-- the score board should stop generating scores to the DOM after the 10th score is generated-->
+            <!-- additional scores are then appendend in proper order depending on where their high score lies -->
+          </section>
+          <script src="./levels/index.js" type="level"></script>
+        </main>
+        <footer class="footer">
+          <!-- requires javascript to load changes when certain event listeners are triggered(pacman death, pacman eats item) -->
+          <div class="footer__container">
+            <ul class="pacman-lives">
+              <!-- prepend -->
+              <li class="life">
+                <img src="" alt="pacman-icon" />
+              </li>
+            </ul>
+          </div>
+          <div class="footer__container">
+            <ul class="collected-items">
+              <!-- append -->
+              <!-- need the src code to be random, so they appear in random order for different levels(gives it an unpredictable flare that the original lacked) -->
+              <li class="item">
+                <img src="" alt="snake" />
+              </li>
+              <li class="item">
+                <img src="" alt="fig" />
+              </li>
+              <li class="item">
+                <img src="" alt="lamb" />
+              </li>
+              <li class="item">
+                <img src="" alt="pyramid" />
+              </li>
+              <li class="item">
+                <img src="" alt="gem-stone" />
+              </li>
+              <li class="item">
+                <img src="" alt="golden-calf" />
+              </li>
+              <li class="item">
+                <img src="" alt="stone-tablets" />
+              </li>
+              <li class="item">
+                <img src="" alt="crown" />
+              </li>
+            </ul>
+          </div>
+        </footer>
       </div>
-      <div class="container">
-        <ul class="collected-items">
-          <!-- append -->
-          <!-- need the src code to be random, so they appear in random order for different levels(gives it an unpredictable flare that the original lacked) -->
-          <li class="item">
-            <img src="" alt="snake" />
-          </li>
-          <li class="item">
-            <img src="" alt="fig" />
-          </li>
-          <li class="item">
-            <img src="" alt="lamb" />
-          </li>
-          <li class="item">
-            <img src="" alt="pyramid" />
-          </li>
-          <li class="item">
-            <img src="" alt="gem-stone" />
-          </li>
-          <li class="item">
-            <img src="" alt="golden-calf" />
-          </li>
-          <li class="item">
-            <img src="" alt="stone-tablets" />
-          </li>
-          <li class="item">
-            <img src="" alt="crown" />
-          </li>
-        </ul>
-      </div>
-    </footer>
+    </div>
   </body>
 </html>
