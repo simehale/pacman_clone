@@ -1,35 +1,68 @@
 /* Grid dimensions should be 6x6 px for each cell*/
+.page {
+  .page {
+    background-color: black;
+    padding: 20px;
+    min-height: 100vh;
+  }
+}
+
 .level {
-  width: 1920px;
-  height: 1080px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: black;
-  display: block;
-  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .level__content {
-  display: flex;
-  margin: 0 auto;
-  width: 720px;
-  min-height: 100vh;
-  box-sizing: content-box;
+  max-width: 510px;
+  max-height: 90vh;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px;
   font-family: "Joystix Monospace", Courier, monospace;
   color: white;
   background-color: blue;
 }
 
+/* need media queries for level and level__content when the view-height changes */
+
 .header {
+  display: flex;
   width: 100%;
   height: 10px;
   font-family: "Joystix Monospace", Courier, monospace;
   font-size: 24px;
+  gap: 40px;
+}
+.player-score {
+  display: block;
+  justify-items: center;
+}
+
+.high-score {
+  display: block;
+  justify-items: center;
 }
 
 .heading {
-  font-family: "Joystix Monospace", Courier, monospace;
+  margin: 0 auto;
+}
+
+.score {
+  margin: 0 auto;
 }
 
 h2 {
+  visibility: hidden;
   font-size: 30px;
 }
 
