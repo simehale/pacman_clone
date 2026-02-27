@@ -1,0 +1,142 @@
+h2 {
+  visibility: hidden;
+  font-size: 30px;
+}
+/* Grid dimensions should be 6x6 px for each cell*/
+
+.page {
+  background-color: black;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.level__content {
+  max-width: 448px;
+  height: 576px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px;
+  gap: 20px;
+  font-family: "Joystix Monospace", Courier, monospace;
+  color: white;
+  background-color: black;
+}
+
+/* need media queries for level and level__content when the view-height changes */
+
+.header {
+  display: flex;
+  width: 100%;
+  font-family: "Joystix Monospace", Courier, monospace;
+  font-size: 24px;
+  gap: 20px;
+}
+.player-score {
+  display: block;
+  justify-items: center;
+  width: 100px;
+}
+
+.high-score {
+  display: block;
+  justify-items: center;
+  width: 145px;
+}
+
+.heading {
+  margin: 0 auto;
+}
+
+.score {
+  margin: 0 auto;
+}
+
+.maze {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.maze__container {
+  display: grid;
+  box-sizing: border-box;
+  border-color: rgb(0, 136, 255);
+  border-width: 2px;
+  grid-template-rows: repeat(38, 14px);
+  grid-template-columns: repeat(32, 14px);
+  /* background-image: ; this is where I'll place the maze vector image with a clean pixel styled render*/
+}
+
+.pacman {
+  width: 32px;
+  height: 32px;
+  /* pacman container */
+}
+
+.pacman bit-map {
+  display: grid;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+}
+
+.ghost {
+  width: 32px;
+  height: 32px;
+  /* ghost container */
+}
+
+.ghost__body bit-map {
+  display: grid;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  grid-template-rows: repeat(32, 2px);
+  grid-template-columns: repeat(32, 2px);
+  background-image: url(../src/img/21575-4-pac-man-ghost-image.png);
+}
+
+.pellet__small bit-map {
+}
+
+.pellet__big bit-map {
+}
+
+.special-items {
+  visibility: hidden;
+  /* background-image: ; need default item */
+}
+
+.pacman-lives {
+  visibility: hidden;
+}
+
+.collected-items {
+  visibility: hidden;
+}
+
+.characters {
+  width: 100%;
+  position: absolute;
+}
+
+.leader-board {
+  position: absolute;
+}
