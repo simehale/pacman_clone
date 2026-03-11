@@ -128,7 +128,6 @@ h2 {
 }
 
 .pellet__small.bit-map {
-  position: absolute;
 }
 
 .pellet__big.bit-map {
@@ -143,16 +142,8 @@ h2 {
   /* background-image: ; need default item */
 }
 
-.gem-stone {
-  padding-top: 0.3px;
-}
-
-.fruit {
-  padding-top: 0.3px;
-}
-
-.stone-tablets {
-  padding-bottom: 0.3px;
+.pale-peach {
+  background-color: #ffccaa;
 }
 
 .emerald {
@@ -211,16 +202,16 @@ h2 {
   background-color: #788285;
 }
 
-.pyramid-outline {
+.dark-brown {
   background-color: #5c2c00;
 }
-.sand-light {
-  background-color: #f1c40f;
-}
-.sand-shadow {
+.dark-bronze {
   background-color: #d35400;
 }
-.sun-glint {
+.gold {
+  background-color: #f1c40f;
+}
+.brilliant-yellow {
   background-color: #ffeaa7;
 }
 
@@ -232,6 +223,22 @@ h2 {
 }
 .slate-gray {
   background-color: #7f8c8d;
+}
+
+.dark-bronze {
+  background-color: #d35400;
+}
+.bright-gold {
+  background-color: #f1c40f;
+}
+.ruby-red {
+  background-color: #c0392b;
+}
+.sapphire-blue {
+  background-color: #2980b9;
+}
+.white {
+  background-color: #ffffff;
 }
 
 .leader-board {
